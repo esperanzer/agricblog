@@ -1,0 +1,27 @@
+{% extends 'crop/base.html' %}
+
+    
+  <!-- list_navbar left..!> -->
+
+{% block body %}
+
+	<h3> Product List</h3>
+		<ul>
+			{% for product in product %}
+				<li>
+		<!-- this absolute_url get detels from d models,wev dfined there -->
+				
+					<a href="{{ product.get_absolute_url }}">
+					{{ product.product_name }}
+					</a>
+				
+
+				</li>
+
+			{% endfor %}
+		</ul>
+
+	{% endblock %}
+
+
+	

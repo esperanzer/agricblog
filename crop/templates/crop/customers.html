@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href='/static/css/bootstrap.min.css'>
+{% endblock head %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>{{ title }}</h1>
+    </div>
+
+    {% for crop in object_list %}
+    <!-- providing the link  for listing all products-->
+        <p><a href="#">{{ crop.name }}</a></p><br/>
+    {% endfor %}
+{% endblock content %}
+
+
+
+

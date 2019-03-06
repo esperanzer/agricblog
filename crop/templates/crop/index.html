@@ -1,0 +1,41 @@
+{% extends 'crop/base.html' %}
+
+<!-- once you put block body belo instead of block content it dsplays d list of expenses in d interface browser, try it -->
+{% block content %}
+
+	<h3> Product  List</h3>
+		<ul>
+			{% for product in object_list %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+				<h2>
+					<a href='{{ product.get_absolute_url }}'>
+					{{ product.product_name }}
+					{{ product.category_choices }}
+					</a>
+				</h2>
+
+				</li>
+
+			{% endfor %}
+		</ul>
+
+		<h3> Customer List</h3>
+		<ul>
+			{% for customer in object_list %}
+				<li>
+					<!-- this absolute_url get detels from d models,wev dfined there -->
+					<a href="{{ customer.get_absolute_url }}">
+					{{ customer.customer_name }}
+					</a>
+				</li>
+
+			{% endfor %}
+		</ul>
+
+		
+					
+{% endblock %}
+
+
+	

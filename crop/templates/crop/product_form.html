@@ -1,0 +1,31 @@
+{% extends 'crop/base.html' %}
+{% block title %}Add a new Product{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 col-md-7">
+			<div class="panel pannel-default">
+				<div class="panel-body">
+					<h3>Press your orders here</h3>
+					<!-- LOOK INTO THIS CAREFULLY +meking oreders -->
+					<form class = "form-horizontal" action= "" method ="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<!--d include below, is how we want our lables en form filds 2b, tho dosent exist yet, we wl create it -->
+						{% include 'crop/product_form_template.html' %}
+						<!-- below is the button -->
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="form-group">
+							<button type="submit" class="btn btn-success">submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>	
+
+{% endblock body %}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Farmers Blog{% endblock %}</title>
+  {% load staticfiles %}
+  <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+  <!-- bootstrap css files -->
+  <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.cobootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet'
+  type='text/css'>
+
+
+ <!-- custom css -->
+  <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+</head>
+<body> 
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+<a class="navbar-brand" href="{% url 'crop:index'%}">Farmers Blog</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                    
+            <li class="{% block product_active %}{% endblock %}"><a href="{% url 'crop:product'%}"><span class="glyphicon glyphicon-fruits" aria-hidden="true"></span>&nbsp; Products</a></li>
+                        
+            <li class="{% block customer_active %}{% endblock %}"><a href="{% url 'crop:customer' %}"><span class="glyphicon glyphicon-fruits" aria-hidden="true"></span>&nbsp; Customer Srvices</a></li>
+                
+            <li class="{% block AboutUs_active %}
+            {% endblock %}">
+            <a href="{% url 'crop:index'%}"><span class="glyphicon glyphicon-elevator" aria-hidden="true"></span>&nbsp; About Us</a></li>
+            </ul>        
+                           
+                                                    
+            <form class="navbar-form navbar-left" role="search" method="get" action="#">
+            <div class="form-group">
+                
+            <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+            </form>
+                    <!-- navbar right -->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'crop:orders-add'%}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Make Orders
+                      
+                        
+                    </a>
+                </li>
+                
+                
+                 
+                <!-- link -->
+                <li class="#">
+                    <a href="{% url 'crop:login'%}">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Login 
+                    </a>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- front peg design here -->
+
+<!-- fest colum -->
+      <div class="col-md-4" id="carrots"> 
+        <img src='{% static "img/carrots.jpeg" %}'>
+      <p> Reach for pregnancy</p>
+      </div>
+    <!-- second colum -->
+    <div class="col-md-4" id="cury">
+        <img src='{% static "img/cury.jpeg" %}'>
+          <p> For BP</p>
+      </div>
+
+    <!-- third colum -->
+
+      <div class="col-md-4" id="green">   
+      <img src='{% static "img/green.jpeg" %}'>
+        <p>Reach in vitamin B</p>
+        </div>
+<!-- 4th column -->
+
+    
+        <div class="col-md-4" id="basket">
+          <img src='{% static "img/basket1.jpeg" %}'>
+      <p>basket offer on promo for every $10 purchase and above</p>
+        </div>
+
+        <!-- fith colum -->
+        <div class="col-md-4" id="combo">
+          <img src='{% static "img/images.jpeg" %}'>
+          <p>Fruit Combo</p>
+        </div>
+      
+      <!-- sixth colum -->
+        <div class="col-md-4" id="tree2">
+          <img src='{% static "img/tree2.jpeg" %}'>
+      <p>Gourd fuits with vitamin C </p>
+        </div>
+
+
+        <!-- seveth colum -->
+        <div class="col-md-4" id="tomatos">
+          <img src='{% static "img/tomatos.jpeg" %}'>
+      <p>only $ 2 per box</p>
+        </div>
+
+
+      
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+                {% block body %}
+                {% endblock body %}
+                <!-- start footer -->
+                      <br><br><br><br><br><br><br><br><br>
+                      <br><br><br><br><br><br><br><br><br>
+                <footer>
+                         <div class="container-fluid" style=" background-color:DarkCyan;"> 
+                        <div class="row">
+                        <div class="col-md-3">
+                       </div>
+                     <div class="col-md-3">
+             <h2>Headoffice</h2>
+          <p>contacts:</p>
+        <p><span class="glyphicon glyphicon-phone"></span>+20976127357-Mr.Enrique Di Caprio : The Ranch Managing Director</p>
+      <p><span class="glyphicon glyphicon-phone"></span>+209768820901-Esperanza M. Rodriguez: The engineer </p>
+    <p>or email us @ <br>safari@infor.co.mx</p>
+    
+    </div>
+      <!-- start text widget -->
+        <div class="col-md-3">
+        <h3>Business Hours</h3>
+          <div class="contact-info">
+       
+              <ul class="hours">
+                <li>Monday-Friday: <span>24 hours services</span></li>
+                <li>Saturday:<span>09:00 - 12:00hours</span></li>
+                  </ul>
+                </div>
+            </div>
+            </div>
+       <!--  end widget -- >
+           <p>designed and developed by 
+           Eseranza Margarita </p>
+            </div>
+
+            <!-- Start Copyright -->
+
+                <div class="copyright-section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+                       <p>
+                  <a href="#">F.A.Qs</a><br>
+             &copyright 2018. Designed & Developed by Esperanza  
+                  
+                   
+                  </a>
+                </p>
+              </div>
+            </div>
+    
+            <!-- .row -->
+          </div>
+        </div>
+        <!-- End Copyright -->
+</footer>
+      <!-- end footer-->
+    <!-- bootstrap js files -->
+    <script type="text/javascript" src='{% static "js/jquery.1.11.1.js" %}'></script>
+      
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+
+</body>
+</html>

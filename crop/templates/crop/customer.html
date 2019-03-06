@@ -1,0 +1,26 @@
+{% extends 'crop/base.html' %}
+
+    
+<!-- navbar let -->
+{% block body %}
+
+	<h3> Customer List</h3>
+		<ul>
+			{% for customer in customers %}
+				<li>
+	<!-- this absolute_url get detels from d models,wev dfined there -->
+				
+					<a href="{{ customer.get_absolute_url }}">
+					{{ customer.customer_name }}
+					</a>
+				
+
+				</li>
+
+			{% endfor %}
+		</ul>
+
+	{% endblock %}
+
+
+	
